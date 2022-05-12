@@ -1,0 +1,26 @@
+{
+  "name": "shopifybackendchallenge",
+  "version": "1.0.0",
+  "description": "my shopify backend challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElhamBadri2411/ShopifyBackendChallenge.git"
+  },
+  "author": "Elham Badri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElhamBadri2411/ShopifyBackendChallenge/issues"
+  },
+  "homepage": "https://github.com/ElhamBadri2411/ShopifyBackendChallenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
