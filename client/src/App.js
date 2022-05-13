@@ -14,7 +14,7 @@ function App() {
   const [items, setItems] = useState([]); //
   const [deletedItems, setDeletedItems] = useState([]);
 
-  let API_URL = "http://localhost:3001/api";
+  let API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
   const handleUpdate = (id) => {
     setCurrentId(id);
@@ -99,8 +99,12 @@ function App() {
       {/* FORM */}
       <form
         onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", maxWidth: "50%", marginTop: "1rem" }}
-        >
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          maxWidth: "50%",
+          marginTop: "1rem",
+        }}>
         <label style={{ margin: "2px", heigh: "2rem" }}> Name </label>
         <input
           style={{ margin: "2px", height: "2rem" }}
@@ -162,7 +166,7 @@ function App() {
       </form>
 
       {/* ALL ITEMS */}
-      <div style={{ backgroundColor: "lightGreen", padding:"1rem"}}>
+      <div style={{ backgroundColor: "lightGreen", padding: "1rem" }}>
         <h1>Inventory</h1>
         {items.map((item) => (
           <Item
@@ -175,7 +179,7 @@ function App() {
       </div>
 
       {/* DELETED ITEMS */}
-      <div style={{ backgroundColor: "lightPink", padding:"1rem"}}>
+      <div style={{ backgroundColor: "lightPink", padding: "1rem" }}>
         <h1>Deleted Items</h1>
         {deletedItems.map((item) => (
           <div key={item.id}>
@@ -183,7 +187,7 @@ function App() {
             <h2>{item.name}</h2>
             <p>{"$" + item.price}</p>
             <p>{"Qty: " + item.quantity}</p>
-            <p>{"Located: " +item.location}</p>
+            <p>{"Located: " + item.location}</p>
             {item.comment ? <p>{"Delete reason: " + item.comment}</p> : null}
             <button onClick={() => restoreItem(item)}>Restore</button>
           </div>
