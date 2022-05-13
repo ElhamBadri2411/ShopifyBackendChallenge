@@ -14,7 +14,7 @@ function App() {
   const [items, setItems] = useState([]); //
   const [deletedItems, setDeletedItems] = useState([]);
 
-  let API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
+  let API_URL = process.env.API_URL || "http://localhost:3001/api";
 
   const handleUpdate = (id) => {
     setCurrentId(id);
