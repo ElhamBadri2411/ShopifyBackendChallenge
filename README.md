@@ -24,7 +24,6 @@ we store all the data in the data class which is initialized with some random da
 - you can restore the recently deleted items by clicking restore item
 
 
-# Running
-to run the app:
-    -npm run start in root directory to start the backend
-    -npm start in client directory to start frontend react app
+# Running the app
+-[npm run start] in root directory to start the backend
+-[npm start] in client directory to start frontend react app
