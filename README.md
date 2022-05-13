@@ -25,5 +25,6 @@ we store all the data in the data class which is initialized with some random da
 
 
 # Running the app
+-[npm i] to download the necessary packages
 -[npm run start] in root directory to start the backend
 -[npm start] in client directory to start frontend react app
