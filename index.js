@@ -9,6 +9,7 @@ let db = new Database();
 
 app.use(express.json({ extended: false }));
 app.use(cors());
+app.use(express.static(__dirname + "/build"));
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
