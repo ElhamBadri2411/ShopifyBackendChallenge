@@ -71,14 +71,12 @@ app.post("/api/inventory", async (req, res) => {
       return res.status(400).json({ msg: "Please enter a valid price" });
     }
 
-    //check if quantity is correct format
-    if (
-      !typeof item.quantity === "number" ||
-      item.quantity < 0 ||
-      !Number.isInteger(item.quantity)
-    ) {
-      return res.status(400).json({ msg: "Please enter a valid quantity" });
+    //check if quantity is a positive integer
+    if (item.quantity < 0 || isNaN(item.quantity) || !Number.isInteger(Number(item.quantity))) {
+      return res.status(400).json({ msg: "Please enter a positive quantity" });
     }
+
+   
 
     //check if item exists
     if (await db.itemExistsByFields(item)) {
